@@ -43,8 +43,10 @@ faster-whisperは、高速な音声認識推論を実現するライブラリで
 
 ## Get Started
 
-### 1. Conda 環境の作成
-[Anaconda](https://www.anaconda.com/)を使用してPythonの実行環境を用意します。<br>
+### 1. conda環境の作成
+
+[Anaconda](https://www.anaconda.com/)を使用してPythonの実行環境を用意します。<br>**環境作成にvenvを用いると、ffmpeg, cudnnを手動で入れる手間が生じるので、condaの使用を推奨します。**
+
 Anaconda Prompt から、新しいconda環境を作成します。
 ```cmd
 conda create -n [環境名] python==3.11
