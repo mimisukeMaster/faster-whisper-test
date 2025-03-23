@@ -1,4 +1,9 @@
 # faster-whisper-test
+[<img src="https://img.shields.io/github/stars/mimisukeMaster/faster-whisper-test">](https://github.com/mimisukeMaster/faster-whisper-test/stargazers)
+[<img  src="https://img.shields.io/github/license/mimisukeMaster/faster-whisper-test">](/LICENSE)
+[<img src="https://img.shields.io/badge/issues-welcome-orange">](https://github.com/mimisukeMaster/AI-VOICEVOX/issues)<br>
+<img src="https://img.shields.io/github/repo-size/mimisukeMaster/faster-whisper-test?color=ff69b4&logo=gitlfs">
+[<img src="https://img.shields.io/static/v1?label=&message=Open%20in%20Visual%20Studio%20Code&color=007acc&style=flat">](https://github.dev/mimisukeMaster/faster-whisper-test)
 
 A sample project to test and demonstrate [faster-whisper](https://github.com/guillaumekln/faster-whisper).
 
@@ -20,7 +25,7 @@ faster-whisperは、高速な音声認識推論を実現するライブラリで
     ```
 
 - GPUでの推論の場合、動かすモデルに対応するスペック以上のGPUが必要です。<br>
-CPUで動かすことも可能です。
+実行時間は5~6倍かかりますが、CPUで動かすことも可能です。
 
     |モデル|パラメータ数|推奨VRAM|
     |:----:|:----:|:----:|
@@ -40,7 +45,11 @@ CPUで動かすことも可能です。
 
 ### 1. Conda 環境の作成
 [Anaconda](https://www.anaconda.com/)を使用してPythonの実行環境を用意します。<br>
-Anaconda Prompt から、新しいconda環境を作成します。その環境内で、以下のコマンドを実行して必要なパッケージをインストールしてください。
+Anaconda Prompt から、新しいconda環境を作成します。
+```cmd
+conda create -n [環境名] python==3.11
+```
+その環境内で、以下のコマンドを実行して必要なパッケージをインストールしてください。
 
 ```cmd
 pip install yt-dlp
