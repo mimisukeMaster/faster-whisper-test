@@ -1,6 +1,6 @@
 from faster_whisper import WhisperModel
 import subprocess
-YOUTUBE_ID = "F6K5OvFXfjs" # Youtube ID
+YOUTUBE_ID = "MfOzjBTYrEc" # Youtube ID
 AUDIO_FILE_NAME = f"{YOUTUBE_ID}.mp3"
 # Download audio from Youtube
 def dl_yt(yt_url):
@@ -8,11 +8,13 @@ def dl_yt(yt_url):
 
 dl_yt(f"https://youtu.be/{YOUTUBE_ID}")
 
-model = WhisperModel("medium", device="cuda", compute_type="int8")
+model = WhisperModel("small", device="cuda", compute_type="int8")
 
 segments, info = model.transcribe(
 	AUDIO_FILE_NAME,
-	beam_size=5,
+	beam_size=8,
+    log_prob_threshold=0,
+    no_speech_threshold=1,
 	vad_filter=False,
 	without_timestamps=True,)
 	
