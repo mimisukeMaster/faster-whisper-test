@@ -9,7 +9,7 @@ A sample project to test and demonstrate [faster-whisper](https://github.com/gui
 
 faster-whisperは、高速な音声認識推論を実現するライブラリです。このプロジェクトでは、実際にYoutubeのリンクからその動画の文字起こし(STT処理)を行います。
 
-## Requirements
+## Requirements and Models
 - 必要なパッケージは以下の通りです。（実行するタイミングは下方参照）<br>
 バージョンはあくまで自機で動作確認済みのものです。
     ```cmd
@@ -22,14 +22,19 @@ faster-whisperは、高速な音声認識推論を実現するライブラリで
 - GPUでの推論の場合、動かすモデルに対応するスペック以上のGPUが必要です。<br>
 CPUで動かすことも可能です。
 
-    |モデル|推奨VRAM|
-    |----|----|
-    |tiny, base|1GB以上|
-    |small|2GB以上|
-    |medium|5GB以上|
-    |large|10GB以上||
+    |モデル|パラメータ数|推奨VRAM|
+    |:----:|:----:|:----:|
+    |tiny|32M|1GB以上|
+    |base|74M|2GB以上|
+    |small|244M|4GB以上|
+    |medium|769M|6GB以上|
+    |large, large-v3|1550M|10GB以上|
 
     また、GPUはFP16（半精度浮動小数点）計算に対応しており、CUDA Compute Capability 6.0以上（Pascal世代以降）が推奨です。
+    ※GPUの性能が対象のモデルに見合わない場合、推論が正常に行われず、音声の一部が変換されなかったり`out-of-memory`エラーにより処理が中断される可能性があります。
+
+  - 2025/3現在、公式のHugging Faceでは`large`モデル以外を使う場合、より軽量・高速化した蒸留モデル`distil-large-v3`の使用が推奨されています([参照](https://huggingface.co/distil-whisper))が、日本語の推論はサポートされていないことをご注意ください。
+
 
 ## Get Started
 
@@ -64,7 +69,7 @@ conda install -c conda-forge cudnn
 - このプロジェクトはこちらの記事をもとに作成しました:<br>
     https://zenn.dev/tsuzukia/articles/1381e6c9a88577
 - faster-whisper Hugging Face:<br>
-    https://huggingface.co/distil-whisper
+    https://huggingface.co/models?search=openai/whisper
 - 推論時の量子化処理の程度と必要なスペック:<br>
     https://opennmt.net/CTranslate2/quantization.html
 

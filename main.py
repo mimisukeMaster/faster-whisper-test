@@ -8,7 +8,7 @@ def dl_yt(yt_url):
 
 dl_yt(f"https://youtu.be/{YOUTUBE_ID}")
 
-model = WhisperModel("large-v3", device="cuda", compute_type="int8")
+model = WhisperModel("medium", device="cuda", compute_type="int8")
 
 segments, info = model.transcribe(
 	AUDIO_FILE_NAME,
