@@ -1,6 +1,6 @@
 from faster_whisper import WhisperModel
 import subprocess
-YOUTUBE_ID = "MfOzjBTYrEc" # Youtube ID
+YOUTUBE_ID = "9GKo2iogPsM" # Youtube ID
 AUDIO_FILE_NAME = f"{YOUTUBE_ID}.mp3"
 # Download audio from Youtube
 def dl_yt(yt_url):

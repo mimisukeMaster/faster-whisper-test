@@ -1,7 +1,7 @@
 # faster-whisper-test
 [<img src="https://img.shields.io/github/stars/mimisukeMaster/faster-whisper-test">](https://github.com/mimisukeMaster/faster-whisper-test/stargazers)
 [<img  src="https://img.shields.io/github/license/mimisukeMaster/faster-whisper-test">](/LICENSE)
-[<img src="https://img.shields.io/badge/issues-welcome-orange">](https://github.com/mimisukeMaster/AI-VOICEVOX/issues)<br>
+[<img src="https://img.shields.io/badge/issues-welcome-orange">](https://github.com/mimisukeMaster/faster-whisper-test/issues)<br>
 <img src="https://img.shields.io/github/repo-size/mimisukeMaster/faster-whisper-test?color=ff69b4&logo=gitlfs">
 [<img src="https://img.shields.io/static/v1?label=&message=Open%20in%20Visual%20Studio%20Code&color=007acc&style=flat">](https://github.dev/mimisukeMaster/faster-whisper-test)
 
