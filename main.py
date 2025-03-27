@@ -1,12 +1,14 @@
 from faster_whisper import WhisperModel
 import subprocess
-YOUTUBE_ID = "9GKo2iogPsM" # Youtube ID
+YOUTUBE_URL = "https://youtu.be/9GKo2iogPsM"
+YOUTUBE_URL = YOUTUBE_URL.split("?")[0]
+YOUTUBE_ID = YOUTUBE_URL.split("youtu.be/")[-1] # Youtube ID
 AUDIO_FILE_NAME = f"{YOUTUBE_ID}.mp3"
 # Download audio from Youtube
 def dl_yt(yt_url):
     subprocess.run(f"yt-dlp -x --audio-format mp3 -o {AUDIO_FILE_NAME} {yt_url}", shell=True)
 
-dl_yt(f"https://youtu.be/{YOUTUBE_ID}")
+dl_yt(f"{YOUTUBE_URL}")
 
 model = WhisperModel("small", device="cuda", compute_type="int8")
 
